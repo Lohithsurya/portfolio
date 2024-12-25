@@ -2,31 +2,35 @@ import Head from 'next/head';
 import Image from "next/image";
 import boy from "../Images/boy.png";
 import {BsFillMoonStarsFill,BsSunFill} from 'react-icons/bs';
-import {AiFillGithub, AiFillInstagram, AiFillLinkedin} from 'react-icons/ai';
+import {AiFillGithub, AiFillInstagram, AiFillLinkedin,AiOutlineArrowRight} from 'react-icons/ai';
 import {useState} from 'react';
 
 const ProjectCard = ({ title, description, link }) => (
-  <div className="text-center p-6 rounded-xl dark:bg-gray-800 bg-white w-full sm:w-80 hover:scale-105 transition-transform duration-300 ease-in-out shadow-2xl">
-    <h4 className="text-lg font-medium py-2 dark:text-teal-400">{title}</h4>
-    <p className="py-2 dark:text-gray-300 text-gray-600">{description}</p>
-    <a href={link} target="_blank" rel="noopener noreferrer" className="text-teal-600 dark:text-teal-400 underline">
-      View Project
+  <div className="p-6 rounded-xl dark:bg-gray-800 bg-white w-full sm:w-80 hover:scale-105 transition-transform duration-300 ease-in-out shadow-2xl relative group">
+    <h4 className="text-lg text-center font-medium py-2 dark:text-teal-400">{title}</h4>
+    <p className="py-2 text-sm dark:text-gray-300 text-gray-600">{description}</p>
+    <a 
+      href={link} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="text-teal-600 absolute bottom-4 left-1/2 transform -translate-x-1/2 dark:text-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <AiOutlineArrowRight className="text-xl" />
     </a>
   </div>
 );
+
+
 
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
   const projects = [
-    { title: "Project One", description: "A brief description of project one and its key features.", link: "#" },
-    { title: "Project Two", description: "A brief description of project two and its key features.", link: "#" },
-    { title: "Project Three", description: "A brief description of project three and its key features.", link: "#" },
-    { title: "Project Four", description: "A brief description of project four and its key features.", link: "#" },
-    { title: "Project Five", description: "A brief description of project five and its key features.", link: "#" },
-    { title: "Project Six", description: "A brief description of project six and its key features.", link: "#" },
-  ];
+    { title: "Movie-Recommender", description: "The Movie Recommender System provides personalized movie suggestions based on user preferences and movie data.", link: "https://movie-recommender-by-preference.streamlit.app/" },
+    { title: "Calories Burnt Prediction", description: "The Calories Burnt Prediction project uses machine learning algorithms to predict the number of calories burned based on various factors like physical activity, age, and weight.", link: "https://github.com/Lohithsurya/Calories-Burnt-Prediction" },
+    { title: "Document comparison tool", description: "The Document Comparison Tool with RAG uses Retrieval-Augmented Generation (RAG) to efficiently compare documents and generate relevant insights based on their contents.", link: "#" },
+    ];
 
   return (
    <div className={darkMode ? "dark" : ""}>
@@ -57,10 +61,10 @@ export default function Home() {
           <Image src={boy} alt="Lohith Surya" />
         </div>
 
-        <div className='text-center py-10'>
+        <div className='kkk text-center py-10'>
             <h2 className='text-5xl py-2 text-teal-600 dark:text-teal-400 font-bold font-rubik md:text-6xl'>Lohith Surya</h2>
             <h3 className='text-2xl font-roboto font-semibold py-2 dark:text-gray-100 md:text-3xl'>Software Engineer</h3>
-            <p className='text-md py-5 leading-8 text-gray-500 dark:text-gray-100 font-roboto md:text-xl max-w-lg mx-auto'>Currently studying 2nd year in PES University in Computer Science and Engineering B.Tech</p>
+            <p className='text-md py-5 leading-8 text-gray-500 dark:text-gray-100 font-roboto md:text-xl max-w-lg mx-auto'>Currently in 4th-year B.Tech CSE at PES University, with a keen interest in software engineering, data analysis, cloud technologies, and building innovative solutions through practical projects.</p>
         </div>
 
         <div className='text-5xl flex justify-center gap-16 py-3 text-gray-700 dark:text-gray-100'>
